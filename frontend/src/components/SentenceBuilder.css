@@ -1,0 +1,114 @@
+.sentence-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.sentence-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.sentence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.word-count-badge {
+  background: var(--bg-primary);
+  border-radius: var(--radius-pill);
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.sentence-display {
+  min-height: 48px;
+  padding: 14px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.sentence-placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.sentence-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-speak {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-speak:hover:not(:disabled) {
+  background: var(--accent-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-speak:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-speak:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-clear {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--accent-red);
+  border: 2px solid var(--accent-red);
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-clear:hover:not(:disabled) {
+  background: var(--accent-red-light);
+  transform: translateY(-1px);
+}
+
+.btn-clear:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-clear:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,42 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.camera-section {
+  flex: 1.4;
+  min-width: 0;
+}
+
+.controls-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 300px;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .controls-section {
+    min-width: unset;
+  }
+}
