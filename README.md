@@ -63,6 +63,8 @@ Example:
 - scikit-learn
 - joblib
 - pandas
+- OpenCV
+- MediaPipe
 
 **Machine Learning**
 
@@ -118,6 +120,11 @@ Install these before running the project:
 - Node.js and npm
 - A webcam-enabled browser
 - Docker, optional
+
+For dataset collection, also install:
+
+- OpenCV Python
+- MediaPipe
 
 ### 1. Clone The Repository
 
@@ -254,6 +261,27 @@ cd ml
 python train_model.py --data-dir ../database/Structured/Vedant_Fruits --output ../backend/models/fruits.pkl --category Fruits
 ```
 
+### Collect A Dataset
+
+The dataset collection script used for this project is:
+
+```text
+ml/collect_dataset.py
+```
+
+It records webcam frames, extracts MediaPipe Pose landmarks, and saves them as a labeled CSV file.
+
+```bash
+cd ml
+python collect_dataset.py --action hello --output ../database/Structured/GeneralAction/hello.csv --duration 8
+```
+
+Preview camera without saving:
+
+```bash
+python collect_dataset.py --action hello --output ../database/Structured/GeneralAction/hello.csv --preview-only
+```
+
 ## Testing
 
 No dedicated automated test suite is currently included.
@@ -284,6 +312,7 @@ Manual test:
 - Model files must be stored in `backend/models` and use the `.pkl` extension.
 - The backend derives model IDs from lowercase filenames without `.pkl`.
 - Dataset CSV files should include landmark feature columns and an `action` label column.
+- Use `ml/collect_dataset.py` to collect new landmark CSV files.
 - The structured database is stored in `database/Structured`.
 - `node_modules`, Python caches, virtual environments, and build outputs are intentionally ignored.
 - Large future datasets or model files may require Git LFS if they exceed GitHub file limits.
